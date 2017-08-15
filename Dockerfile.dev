@@ -1,0 +1,10 @@
+FROM node:8.3.0
+
+EXPOSE 8080
+WORKDIR /app
+ENV NODE_ENV development
+
+# add package.json and run npm install before adding the rest of the files
+# this way, you only run npm install when package.json changes
+ADD package.json /app
+RUN yarn install
