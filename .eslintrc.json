@@ -19,11 +19,13 @@
     "no-undef": "warn",
     "no-unreachable": "warn",
     "no-unused-vars": "warn",
+    "eol-last": "warn",
     "constructor-super": "warn",
     "valid-typeof": "warn",
     "semi": "warn",
     "react/jsx-uses-vars": "error",
-    "react/react-in-jsx-scope": "error"
+    "react/react-in-jsx-scope": "error",
+    "jsx-quotes": ["error", "prefer-double"]
   },
   "plugins": [
     "react"
