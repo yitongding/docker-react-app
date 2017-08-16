@@ -1,29 +1,29 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from '../actions/todoAction'
+import React from 'react'; // eslint-disable-line no-unused-vars
+import { connect } from 'react-redux';
+import { addTodo } from '../actions/todoAction';
 
 let AddTodo = ({ dispatch }) => {
-  let _input 
+  let _input; 
 
   return (
     <div>
       <form
         onSubmit={e => {
-          e.preventDefault()
+          e.preventDefault();
           if (!_input.value.trim()) {
-            return
+            return;
           }
-          dispatch(addTodo(_input.value))
-          _input.value = ''
+          dispatch(addTodo(_input.value));
+          _input.value = '';
         }}
       >
         <input ref={c => _input = c} />
         <button type='submit'>Add Todo</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-AddTodo = connect() (AddTodo)
+AddTodo = connect() (AddTodo);
 
-export default AddTodo
+export default AddTodo;

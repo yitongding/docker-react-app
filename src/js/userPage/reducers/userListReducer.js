@@ -1,11 +1,11 @@
 const userListReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_USER_LIST':
-      return action.userList
+      return action.userList;
     
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default userListReducer
+export default userListReducer;

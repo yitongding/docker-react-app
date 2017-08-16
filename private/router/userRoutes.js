@@ -1,12 +1,12 @@
-import express from 'express'
-import {addUser, getUsers} from '../controller/userController'
+import express from 'express';
+import {addUser, getUsers} from '../controller/userController';
 
-const router = express.Router()
+const router = express.Router();
 
 router.route('/users')
-  .get(getUsers)
+  .get(getUsers);
 
 router.route('/user')
-  .post(addUser)
+  .post(addUser);
 
-export default router
+export default router;

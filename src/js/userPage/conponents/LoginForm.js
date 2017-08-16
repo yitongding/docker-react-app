@@ -1,7 +1,7 @@
-import React from "react"
-import {Form, FormGroup, FormControl, Col, Checkbox, Button, ControlLabel} from "react-bootstrap"
+import React from "react"; // eslint-disable-line no-unused-vars
+import {Form, FormGroup, FormControl, Col, Checkbox, Button, ControlLabel} from "react-bootstrap";
 
-const LoginForm = (props) => {
+const LoginForm = () => {
   return (
     <Form horizontal>
       <FormGroup controlId="formHorizontalEmail">
@@ -36,7 +36,7 @@ const LoginForm = (props) => {
         </Col>
       </FormGroup>
     </Form>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

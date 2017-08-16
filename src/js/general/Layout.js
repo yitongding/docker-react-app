@@ -1,12 +1,12 @@
 import React from "react";
 
-import Footer from "./Footer"
-import Header from "./Header"
-import NavBar from "./NavBar"
+import Footer from "./Footer";
+import Header from "./Header";
+import NavBar from "./NavBar";
 
 export default class Layout extends React.Component {
   constructor() {
-    super()
+    super();
   }
 
   render() {
@@ -17,6 +17,6 @@ export default class Layout extends React.Component {
         {this.props.children}
         <Footer />
       </div>
-    )
+    );
   }
 }

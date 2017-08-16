@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import bcrypt from 'bcrypt'
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
 
 const UserSchema = mongoose.Schema({
   local: {
@@ -13,33 +13,33 @@ const UserSchema = mongoose.Schema({
     token: String,
     email: String,
   }
-})
+});
 
-const saltRounds = 10
+const saltRounds = 10;
 
 UserSchema.methods.genereateHash = password => {
-  console.log('in')
+  console.log('in');
   return new Promise((resolve, reject) => {
     bcrypt.hash(password, saltRounds, (err, hash) => {
       if (err) {
-        reject(err)
-        return
+        reject(err);
+        return;
       }
-      resolve(hash)
-    })
-  }) 
-}
+      resolve(hash);
+    });
+  }); 
+};
 
 UserSchema.methods.checkPassword = password => {
   return new Promise((resolve, reject) => {
     bcrypt.compare(password, this.local.hash, (err, result) => {
       if (err) {
-        reject(err)
-        return
+        reject(err);
+        return;
       }
-      resolve(result)
-    })
-  }) 
-}
+      resolve(result);
+    });
+  }); 
+};
 
-export default mongoose.model('User', UserSchema)
+export default mongoose.model('User', UserSchema);

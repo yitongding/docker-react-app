@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 export default class Todo extends React.Component {
   constructor() {
-    super()
+    super();
   }
 
   render() {
@@ -13,6 +13,6 @@ export default class Todo extends React.Component {
       >
         {this.props.text}
       </li>
-    )
+    );
   }
 }
