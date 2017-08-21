@@ -10,10 +10,16 @@ export const addUser = async function (req, res) {
     let hash = await user.genereateHash(password);
     user.local.password = hash;
     await user.save();
-    res.json({ message: 'user created'});
+    res.json({ 
+      'status' : true,
+      'message': 'user created'
+    });
   }
   catch (err) {
-    res.send(err);
+    res.json({
+      'status' : false,
+      'message': err
+    });
   }
 };
 
@@ -24,6 +30,6 @@ export const getUsers = async (req, res) => {
     res.json(users);
   }
   catch (err) {
-    res.send(err);
+    res.json(err);
   }
 };

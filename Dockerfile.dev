@@ -1,6 +1,7 @@
 FROM node:8.3.0
 
 EXPOSE 8080
+EXPOSE 8888
 WORKDIR /app
 ENV NODE_ENV development
 

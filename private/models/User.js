@@ -18,7 +18,6 @@ const UserSchema = mongoose.Schema({
 const saltRounds = 10;
 
 UserSchema.methods.genereateHash = password => {
-  console.log('in');
   return new Promise((resolve, reject) => {
     bcrypt.hash(password, saltRounds, (err, hash) => {
       if (err) {

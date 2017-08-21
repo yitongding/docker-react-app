@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack",
-    "start": "yarn install && yarn run watch & nodemon server.js --exec babel-node",
+    "production": "webpack -p",
+    "start": "yarn install && yarn run watch & nodemon server.js --exec babel-node --watch private",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --colors --watch"
   },
@@ -46,6 +47,8 @@
     "eslint": "^4.4.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-react": "^7.2.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack-bundle-analyzer": "^2.9.0"
   }
 }

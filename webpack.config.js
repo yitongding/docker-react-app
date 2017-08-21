@@ -1,4 +1,6 @@
-var path = require('path');
+const path = require('path');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, "src"),
@@ -17,7 +19,16 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ["es2015", "es2016", "es2017", "react", "stage-2"]
+          presets: [
+            "react", 
+            "stage-2",
+            ["env", {
+              "targets": {
+                "browsers": ["last 2 versions"]
+              },
+              "debug": true
+            }]
+          ]
         }
       },
     ]
@@ -26,4 +37,5 @@ module.exports = {
     path: __dirname + '/public',
     filename: 'index.min.js'
   },
+  //plugins: [new UglifyJSPlugin()]
 };

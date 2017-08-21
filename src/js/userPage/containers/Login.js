@@ -1,16 +1,39 @@
-import React from "react";
+import React from "react"; // eslint-disable-line no-unused-vars
+import { connect } from 'react-redux';
+
+import { handleInputChange, handleSignIn, handleSignOn } from '../actions/loginAction';
 import LoginForm from '../conponents/LoginForm';
 
-class Login extends React.Component {
-  constructor() {
-    super();
-  }
+const Login = (props) => {
+  return (
+    <LoginForm {...props} />
+  );
+};
 
-  render() {
-    return (
-      <LoginForm {...this.props} />
-    );
-  }
-}
+const mapStateToProps = (state) => {
+  return {
+    'username'  :state.userPage.login.username,
+    'email'     :state.userPage.login.email,
+    'password'  :state.userPage.login.password,
+    'isRemember':state.userPage.login.isRemember,
+  };
+};
 
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    'handleInputChange': (e) => {
+      const target = e.target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
+      dispatch(handleInputChange(name, value));
+    },
+    'handleSignIn': () => {
+      dispatch(handleSignIn());
+    },
+    'handleSignOn': async () => {
+      dispatch(handleSignOn());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
