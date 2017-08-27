@@ -1,18 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class Todo extends React.Component {
-  constructor() {
-    super();
-  }
+const propTypes = {
+  onTodoClick: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
-  render() {
-    return (
-      <li 
-        onClick={this.props.onTodoClick} 
-        style={{textDecoration: this.props.completed ? 'line-through' : 'none'}}
-      >
-        {this.props.text}
-      </li>
-    );
-  }
-}
+const Todo = props => (
+  // eslint-disable-next-line
+  <li
+    onClick={props.onTodoClick}
+    style={{ textDecoration: props.completed ? 'line-through' : 'none' }}
+  >
+    {props.text}
+  </li>
+);
+
+Todo.propTypes = propTypes; 
+
+export default Todo;

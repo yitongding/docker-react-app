@@ -1,15 +1,9 @@
-import React from "react";
+import React from 'react';
 
-export default class HelloWorld extends React.Component {
-  constructor() {
-    super();
-  }
+const HelloWorld = () => (
+  <div>
+    <p>Hello World!</p>
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-        <p>Hello World!</p>
-      </div>
-    );
-  }
-}
+export default HelloWorld;

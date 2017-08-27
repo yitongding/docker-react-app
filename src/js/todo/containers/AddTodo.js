@@ -1,29 +1,34 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions/todoAction';
 
-let AddTodo = ({ dispatch }) => {
-  let _input; 
+const propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+const AddTodo = ({ dispatch }) => {
+  let inputStr;
 
   return (
     <div>
       <form
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault();
-          if (!_input.value.trim()) {
+          if (!inputStr.value.trim()) {
             return;
           }
-          dispatch(addTodo(_input.value));
-          _input.value = '';
+          dispatch(addTodo(inputStr.value));
+          inputStr.value = '';
         }}
       >
-        <input ref={c => _input = c} />
+        <input ref={(ref) => { inputStr = ref; }} />
         <button type="submit">Add Todo</button>
       </form>
     </div>
   );
 };
 
-AddTodo = connect() (AddTodo);
+AddTodo.propTypes = propTypes;
 
-export default AddTodo;
+export default connect()(AddTodo);
