@@ -17,6 +17,6 @@ const Todo = props => (
   </li>
 );
 
-Todo.propTypes = propTypes; 
+Todo.propTypes = propTypes;
 
 export default Todo;
