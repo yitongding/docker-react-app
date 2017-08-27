@@ -1,24 +1,23 @@
-import User from '../models/User';
+const User = require('../models/User');
 
-export const addUser = async function (req, res) {
+export const addUser = async function addUser(req, res) {
   try {
-    let user = new User();
+    const user = new User();
     user.local.username = req.body.username;
     user.local.email = req.body.email;
 
-    let password = req.body.password;
-    let hash = await user.genereateHash(password);
+    const password = req.body.password;
+    const hash = await user.genereateHash(password);
     user.local.password = hash;
     await user.save();
-    res.json({ 
-      'status' : true,
-      'message': 'user created'
-    });
-  }
-  catch (err) {
     res.json({
-      'status' : false,
-      'message': err
+      status: true,
+      message: 'user created',
+    });
+  } catch (err) {
+    res.json({
+      status: false,
+      message: err,
     });
   }
 };
@@ -26,10 +25,9 @@ export const addUser = async function (req, res) {
 
 export const getUsers = async (req, res) => {
   try {
-    let users = await User.find();
+    const users = await User.find();
     res.json(users);
-  }
-  catch (err) {
+  } catch (err) {
     res.json(err);
   }
 };

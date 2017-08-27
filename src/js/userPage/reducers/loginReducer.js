@@ -1,17 +1,17 @@
 const todoReducer = (
   state = {
-    'username'  : '',
-    'password'  : '',
-    'email'     : '',
-    'isRemember': false
-  }, 
-  action
+    username: '',
+    password: '',
+    email: '',
+    isRemember: false,
+  },
+  action,
 ) => {
   switch (action.type) {
-    case 'INPUT_CHANGE': 
+    case 'INPUT_CHANGE':
       return {
         ...state,
-        [action.name]: action.value
+        [action.name]: action.value,
       };
     default:
       return state;

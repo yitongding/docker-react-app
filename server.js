@@ -1,10 +1,9 @@
-require('babel-core');
-import bodyParser from 'body-parser'; 
-import express from 'express';
-import mongoose from 'mongoose';
-import path from 'path';
+const bodyParser = require('body-parser'); 
+const express = require('express');
+const mongoose = require('mongoose');
+const path = require('path');
 
-import userRoutes from './private/router/userRoutes';
+const userRoutes = require('./private/router/userRoutes');
 
 const isDeveloping = process.env.NODE_ENV !== 'prod';
 const port = isDeveloping ? 8080 : process.env.PORT;

@@ -1,15 +1,15 @@
-import React from "react";  // eslint-disable-line no-unused-vars
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
+import React from 'react'; // eslint-disable-line no-unused-vars
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import store, { history } from "./store";
+import store, { history } from './store';
 
-import Layout from "./general/Layout";
+import Layout from './general/Layout';
 
-import HelloWorld from "./HelloWorld";
-import Todo from "./todo";
-import UserPage from "./userPage";
+import HelloWorld from './HelloWorld';
+import Todo from './todo';
+import UserPage from './userPage';
 
 const app = document.getElementById('app');
 
@@ -27,4 +27,4 @@ ReactDOM.render(
       </Router>
     </div>
   </Provider>
-, app);
+  , app);
