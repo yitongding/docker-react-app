@@ -9,4 +9,4 @@ router.route('/users')
 router.route('/user')
   .post(addUser);
 
-export default router;
+module.exports = router;

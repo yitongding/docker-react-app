@@ -21,12 +21,8 @@ module.exports = {
         query: {
           presets: [
             'react',
-            ['env', {
-              targets: {
-                browsers: ['last 2 versions'],
-              },
-              debug: true,
-            }],
+            'env',
+            'stage-3',
           ],
         },
       },

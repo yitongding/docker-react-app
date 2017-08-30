@@ -8,7 +8,7 @@ const userRoutes = require('./private/router/userRoutes');
 const isDeveloping = process.env.NODE_ENV !== 'prod';
 const port = isDeveloping ? 8080 : process.env.PORT;
 
-const mongodbUrl = isDeveloping ? 'mongodb://mongodb/react-app' : process.env.MONGODB_URL;
+const mongodbUrl = isDeveloping ? 'mongodb://localhost/react-app' : process.env.MONGODB_URL;
 mongoose.Promise = global.Promise;
 mongoose.connect(mongodbUrl);
 

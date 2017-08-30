@@ -37,4 +37,4 @@ UserSchema.methods.checkPassword = password => new Promise((resolve, reject) => 
   });
 });
 
-export default mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "production": "webpack -p",
-    "start": "yarn install && yarn run watch & nodemon server.js --watch private",
+    "start": "nodemon server.js --watch private",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --colors --watch"
   },
@@ -42,6 +42,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-loader": "^1.9.0",

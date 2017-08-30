@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-export const addUser = async function addUser(req, res) {
+module.exports.addUser = async function addUser(req, res) {
   try {
     const user = new User();
     user.local.username = req.body.username;
@@ -23,7 +23,7 @@ export const addUser = async function addUser(req, res) {
 };
 
 
-export const getUsers = async (req, res) => {
+module.exports.getUsers = async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
